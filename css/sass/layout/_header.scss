@@ -1,0 +1,175 @@
+.header {
+  @include phones {
+    height: 100px;
+  }
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  .head {
+    display: flex;
+    align-items: center;
+    .side-logo {
+      display: flex;
+      align-items: center;
+      .logo {
+        height: 80px;
+        @include tablets {
+          height: 60px;
+        }
+      }
+      .logo-text {
+        font-style: italic;
+        @include phones {
+          display: none;
+        }
+        h1 {
+          font-size: var(--normal-big-font);
+          @include laptops {
+            font-size: var(--normal-font);
+          }
+          color: #ff7e0d;
+          font-weight: 700;
+          span {
+            color: #2555d2;
+          }
+        }
+        p {
+          font-size: var(--small-font);
+          color: var(--main-color);
+          font-weight: 500;
+        }
+      }
+    }
+    .side-links {
+      display: flex;
+
+      align-items: center;
+      margin-left: auto;
+      .links {
+        display: flex;
+        align-items: center;
+        @include tablets {
+          display: none;
+        }
+        @include phones {
+          display: none;
+        }
+        margin-right: 10px;
+        @include laptops {
+          flex-wrap: wrap;
+          justify-content: right;
+          gap: 8px;
+        }
+        li a {
+          position: relative;
+          color: white;
+          padding: 10px 5px;
+          font-size: var(--small-font);
+          transition: 0.3s;
+          font-weight: 500;
+          &.active {
+            color: var(--main-color);
+          }
+          &:hover {
+            color: var(--alt-main-color);
+          }
+        }
+      }
+
+      button {
+        font-size: var(--small-font);
+        padding: 10px 15px;
+        background-color: var(--main-color);
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: 600;
+        @include phones {
+          padding: 8px 10px;
+          font-size: 12px;
+        }
+        &:hover {
+          color: var(--main-color);
+          background-color: white;
+        }
+      }
+      .toggoler {
+        @include tablets {
+          display: block;
+        }
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 6px;
+        margin-left: 10px;
+        padding: 6px 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        &.active {
+          border-color: var(--main-color);
+          span {
+            background-color: var(--main-color);
+            margin-bottom: 16px;
+            &.one {
+              transform: rotate(45deg);
+              margin-top: 10px;
+            }
+            &.three {
+              transform: rotate(135deg);
+              margin-top: -20px;
+            }
+            &.two {
+              display: none;
+            }
+          }
+        }
+        span {
+          display: block;
+          width: 100%;
+          height: 4px;
+          margin-bottom: 6px;
+          background-color: white;
+          border-radius: 2px;
+          transition: 0.3s;
+        }
+      }
+      .toggole-links {
+        position: fixed;
+        display: none;
+        @include tablets {
+          display: block;
+        }
+        &.active {
+          width: 90%;
+          height: 200px;
+          background-color: #000;
+          top: 120px;
+          @include phones {
+            top: 100px;
+          }
+          left: 50%;
+          transform: translateX(-50%);
+          border-top: 2px solid var(--main-color);
+          padding: 20px 0;
+          .links {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            li {
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
