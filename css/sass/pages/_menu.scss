@@ -1,0 +1,38 @@
+.menu-download {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background-color: black;
+  a {
+    color: white;
+    background-color: var(--main-color);
+    padding: 20px 40px;
+    font-size: var(--normal-big-font);
+    font-weight: 600;
+    transition: 0.3s;
+    margin: 0 auto 20px;
+    width: fit-content;
+    @include phones {
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    &:hover {
+      background-color: var(--alt-main-color);
+    }
+  }
+  img {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--main-color);
+    @include phones {
+      padding: 8px;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+}

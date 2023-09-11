@@ -1,0 +1,71 @@
+.header {
+  .button.active {
+    background-color: white !important;
+    color: var(--main-color) !important;
+  }
+  .book-widget {
+    display: none;
+    &.active {
+      position: fixed;
+      min-width: 100%;
+      min-height: 100vh;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+      padding: 0 10px;
+      .book-main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        background-color: black;
+        border-radius: 6px;
+        overflow: hidden;
+        span {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: white;
+          width: 30px;
+          height: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--main-color);
+          font-weight: 800;
+          cursor: pointer;
+        }
+        h3 {
+          color: var(--main-color);
+          margin-bottom: 20px;
+        }
+        input,
+        textarea {
+          padding: 10px 20px;
+          border: 3px solid white;
+          background-color: transparent;
+          margin-bottom: 10px;
+          &::placeholder {
+            color: #987f7f;
+            font-weight: 600;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+        textarea {
+          resize: none;
+        }
+        .btn {
+          width: fit-content;
+          background-color: transparent;
+          border: 3px solid white;
+        }
+      }
+    }
+  }
+}

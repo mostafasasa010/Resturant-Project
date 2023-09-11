@@ -27,7 +27,7 @@ ul {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h6 {
@@ -64,6 +64,154 @@ h6 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.landing {
+  position: relative;
+  height: calc(100vh - 120px);
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .landing {
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+  }
+}
+.landing img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+}
+.landing h1 {
+  position: relative;
+  color: white;
+  font-weight: 500;
+  font-size: 5rem;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+  .landing h1 {
+    font-size: var(--big-font);
+  }
+}
+@media (max-width: 480px) {
+  .landing h1 {
+    font-size: var(--normal-big-font);
+  }
+}
+
+.header .button.active {
+  background-color: white !important;
+  color: var(--main-color) !important;
+}
+.header .book-widget {
+  display: none;
+}
+.header .book-widget.active {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  padding: 0 10px;
+}
+.header .book-widget.active .book-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: black;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.header .book-widget.active .book-main span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  font-weight: 800;
+  cursor: pointer;
+}
+.header .book-widget.active .book-main h3 {
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+.header .book-widget.active .book-main input,
+.header .book-widget.active .book-main textarea {
+  padding: 10px 20px;
+  border: 3px solid white;
+  background-color: transparent;
+  margin-bottom: 10px;
+}
+.header .book-widget.active .book-main input::placeholder,
+.header .book-widget.active .book-main textarea::placeholder {
+  color: #987f7f;
+  font-weight: 600;
+}
+.header .book-widget.active .book-main input:focus,
+.header .book-widget.active .book-main textarea:focus {
+  outline: none;
+}
+.header .book-widget.active .book-main textarea {
+  resize: none;
+}
+.header .book-widget.active .book-main .btn {
+  width: fit-content;
+  background-color: transparent;
+  border: 3px solid white;
+}
+
+.widget {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+.widget > div {
+  position: relative;
+}
+.widget > div span {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  color: white;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color);
+  font-weight: 800;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+}
+.widget > div img {
+  padding: 10px;
+  background-color: var(--main-color);
+  border-radius: 6px 0 6px 6px;
 }
 
 .header {
@@ -927,6 +1075,126 @@ h6 {
 
 .map .image img {
   min-width: 100%;
+}
+
+.menu-download {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background-color: black;
+}
+.menu-download a {
+  color: white;
+  background-color: var(--main-color);
+  padding: 20px 40px;
+  font-size: var(--normal-big-font);
+  font-weight: 600;
+  transition: 0.3s;
+  margin: 0 auto 20px;
+  width: fit-content;
+}
+@media (max-width: 480px) {
+  .menu-download a {
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.menu-download a:hover {
+  background-color: var(--alt-main-color);
+}
+.menu-download img {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--main-color);
+}
+@media (max-width: 480px) {
+  .menu-download img {
+    padding: 8px;
+  }
+}
+.menu-download img:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.para {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  font-size: var(--normal-big-font);
+}
+@media (max-width: 480px) {
+  .para {
+    font-size: var(--small-font);
+  }
+}
+.para p:first-of-type {
+  color: var(--main-color);
+}
+.para p:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.pan-gallery {
+  padding: 30px 0;
+  background-color: black;
+}
+.pan-gallery .gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.pan-gallery .gallery .top {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.pan-gallery .gallery .top p {
+  color: white;
+  background-color: var(--main-color);
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.pan-gallery .gallery .top p:not(:last-of-type) {
+  margin-right: 10px;
+}
+.pan-gallery .gallery .top p.active, .pan-gallery .gallery .top p:hover {
+  background-color: var(--alt-main-color);
+}
+.pan-gallery .gallery .main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pan-gallery .gallery .main img {
+  width: 25%;
+  height: 200px;
+  padding: 10px;
+  background-color: black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .pan-gallery .gallery .main img {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .pan-gallery .gallery .main img {
+    width: 100%;
+  }
+}
+.pan-gallery .gallery .main img.active, .pan-gallery .gallery .main img:hover {
+  background-color: var(--main-color);
 }
 
 /*# sourceMappingURL=main.css.map */
