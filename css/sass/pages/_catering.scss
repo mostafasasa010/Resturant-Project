@@ -1,0 +1,11 @@
+.catering-1 {
+  background-color: black;
+  padding: 40px 0;
+  p {
+    color: #a19999;
+    line-height: 1.5;
+    @include laptops {
+      padding: 0 20px;
+    }
+  }
+}
